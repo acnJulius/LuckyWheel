@@ -15,6 +15,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import rubikstudio.library.model.LuckyItem
 import java.util.*
@@ -83,6 +84,7 @@ open class PielView : View {
     private var mPieRotateListener: PieRotateListener? = null
     private var luckyWheelWheelRotation: Int = 0
     private var lastTap: Int = -1
+    private var darkTextColor: Int = -1
     private var scaledDensity: Double = 0.0
 
     val fallBackRandomIndex: Int
@@ -152,6 +154,10 @@ open class PielView : View {
         defaultBackgroundColor = color
         invalidate()
     }
+    fun setDarkTextcolor(color: Int) {
+        darkTextColor = color
+        invalidate()
+    }
 
     fun setBorderColor(color: Int) {
         borderColor = color
@@ -160,6 +166,10 @@ open class PielView : View {
 
     fun setTopTextPadding(padding: Int) {
         mTopTextPadding = padding
+        invalidate()
+    }
+    fun setDarkTextColor(darkcolor: Int) {
+        darkTextColor = darkcolor
         invalidate()
     }
 
@@ -307,10 +317,10 @@ open class PielView : View {
         val path = Path()
         path.addArc(mRange, tmpAngle, sweepAngle)
 
-        if (textColor == 0)
+  //      if (textColor == 0)
             mTextPaint!!.color = if (isColorDark(backgroundColor)) -0x1 else -0x1000000
 
-        val typeface = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL)
+        val typeface = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD)
         mTextPaint!!.typeface = typeface
         mTextPaint!!.textAlign = Paint.Align.LEFT
         mTextPaint!!.textSize = mTopTextSize.toFloat()
@@ -339,8 +349,9 @@ open class PielView : View {
         canvas.save()
         val arraySize = mLuckyItemList!!.size
 
-        if (textColor == 0)
-            mTextPaint!!.color = if (isColorDark(backgroundColor)) -0x1 else -0x1000000
+  //      if (textColor == 0)
+            mTextPaint!!.color = if (isColorDark(backgroundColor)) -0x1
+            else (if (darkTextColor > 0) ContextCompat.getColor(context, darkTextColor) else -0x1000000)
 
         val typeface = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD)
         mTextPaint!!.typeface = typeface
@@ -356,8 +367,8 @@ open class PielView : View {
         val initFloat = tmpAngle + 360f / arraySize.toFloat() / 2f
         val angle = (initFloat * Math.PI / 180).toFloat()
 
-        val x = (mCenter + mRadius / 2 / 2 * Math.cos(angle.toDouble())).toInt()
-        val y = (mCenter + mRadius / 2 / 2 * Math.sin(angle.toDouble())).toInt()
+        val x = (mCenter + mRadius / 2.3 / 2.3 * Math.cos(angle.toDouble())).toInt()
+        val y = (mCenter + mRadius / 2.3 / 2.3 * Math.sin(angle.toDouble())).toInt()
 
         val xStart = mRadius / 2f / 3f
 

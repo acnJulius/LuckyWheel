@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import rubikstudio.library.model.LuckyItem
 import kotlin.math.roundToInt
@@ -79,7 +80,8 @@ class WheelSliceView @JvmOverloads constructor(
         scaledDensity = Math.round(resources.displayMetrics.scaledDensity * 100.0) / 100.0
 
         sliceType.apply {
-            setTextColor(if (isColorDark(item.color)) -0x1 else -0x1000000)
+     //       setTextColor(if (isColorDark(item.color)) -0x1 else -0x1000000)
+            setTextColor(if (isColorDark(item.color)) -0x1 else ContextCompat.getColor(context,R.color.colorTextDark))
             text = item.topText
             textSize = mTopTextSize
 
@@ -94,7 +96,8 @@ class WheelSliceView @JvmOverloads constructor(
         }
 
         sliceAmount.apply {
-            setTextColor(if (isColorDark(item.color)) -0x1 else -0x1000000)
+            //       setTextColor(if (isColorDark(item.color)) -0x1 else -0x1000000)
+            setTextColor(if (isColorDark(item.color)) -0x1 else ContextCompat.getColor(context,R.color.colorTextDark))
             text = item.secondaryText
             textSize = mSecondaryTextSize
 

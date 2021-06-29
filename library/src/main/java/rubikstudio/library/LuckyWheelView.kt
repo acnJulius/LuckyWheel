@@ -33,6 +33,7 @@ open class LuckyWheelView : ConstraintLayout, PielView.PieRotateListener, PielVi
     private var mBorderColor: Int = 0
     private var mTopTextPadding: Int = 0
     private var mWheelSliceViewPadding: Int = 0
+    private var darkTextColor: Int = -1
     private var mSecondaryTextPadding: Int = 0
     private var mEdgeWidth: Int = 0
     private var mCursorImage: Drawable? = null
@@ -206,6 +207,7 @@ open class LuckyWheelView : ConstraintLayout, PielView.PieRotateListener, PielVi
         pielView!!.setPieRotateListener(this)
         pielView!!.setPieBackgroundColor(mBackgroundColor)
         pielView!!.setTopTextPadding(mTopTextPadding)
+        pielView!!.setDarkTextColor(darkTextColor)
         pielView!!.setTopTextSize(mTopTextSize)
         pielView!!.setSecondaryTextSizeSize(mSecondaryTextSize)
         pielView!!.setSecondaryTextPadding(mSecondaryTextPadding)
@@ -303,6 +305,10 @@ open class LuckyWheelView : ConstraintLayout, PielView.PieRotateListener, PielVi
     fun setPredeterminedNumber(fixNumber: Int) {
         pielView!!.setPredeterminedNumber(fixNumber)
         wheelSliceView!!.bindWheelCard(mLuckyItemList!![fixNumber])
+    }
+
+    fun setDarkTextcolor(color: Int) {
+        pielView!!.setDarkTextColor(color);
     }
 
     fun stopRotation() {
