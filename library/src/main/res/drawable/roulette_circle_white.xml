@@ -6,7 +6,7 @@
 
     <stroke
         android:width="@dimen/roulette_edge_width_dp"
-        android:color="#E1E5EC" />
+        android:color="@color/wheel_border" />
 
     <size
         android:width="@dimen/roulette_center_image_size"
