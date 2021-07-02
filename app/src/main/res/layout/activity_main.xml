@@ -34,8 +34,9 @@
         app:lkwShowSliceView="false"
         app:lkwSpinDuration="3000"
         app:lkwTopTextColor="#263238"
-        app:lkwTopTextPadding="15dp"
-        app:lkwTopTextSize="12sp"
+        app:lkwTopTextPadding="25dp"
+        app:lkwTopTextSize="14sp"
+        app:lkwSecondaryTextPadding="40dp"
         app:lkwWheelCenterCircleSize="@dimen/roulette_center_image_size"
         app:lkwWheelCircleDiameter="575dp"
         app:lkwWheelRotation="-90" />

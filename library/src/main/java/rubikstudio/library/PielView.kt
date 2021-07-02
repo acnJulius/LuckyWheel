@@ -16,6 +16,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.ColorUtils
 import rubikstudio.library.model.LuckyItem
 import java.util.*
@@ -320,14 +321,15 @@ open class PielView : View {
   //      if (textColor == 0)
             mTextPaint!!.color = if (isColorDark(backgroundColor)) -0x1 else -0x1000000
 
-        val typeface = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD)
+        val openSans = ResourcesCompat.getFont(context, R.font.open_sans_bold)
+        val typeface = Typeface.create(openSans, Typeface.NORMAL)
         mTextPaint!!.typeface = typeface
         mTextPaint!!.textAlign = Paint.Align.LEFT
         mTextPaint!!.textSize = mTopTextSize.toFloat()
 
         mTextPaint!!.textScaleX = when (mStr.length > 8 && scaledDensity > 3.3) {
             true -> (1f / mStr.length * 0.5f) * 10f
-            false -> 0.9f
+            false -> 1.0f
         }
 
         val textWidth = mTextPaint!!.measureText(mStr)
@@ -353,7 +355,8 @@ open class PielView : View {
             mTextPaint!!.color = if (isColorDark(backgroundColor)) -0x1
             else (if (darkTextColor > 0) ContextCompat.getColor(context, darkTextColor) else -0x1000000)
 
-        val typeface = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD)
+        val openSans = ResourcesCompat.getFont(context, R.font.open_sans_bold)
+        val typeface = Typeface.create(openSans, Typeface.NORMAL)
         mTextPaint!!.typeface = typeface
         mTextPaint!!.textSize = mSecondaryTextSize.toFloat()
         mTextPaint!!.textAlign = Paint.Align.LEFT
@@ -367,8 +370,8 @@ open class PielView : View {
         val initFloat = tmpAngle + 360f / arraySize.toFloat() / 2f
         val angle = (initFloat * Math.PI / 180).toFloat()
 
-        val x = (mCenter + mRadius / 2.3 / 2.3 * Math.cos(angle.toDouble())).toInt()
-        val y = (mCenter + mRadius / 2.3 / 2.3 * Math.sin(angle.toDouble())).toInt()
+        val x = (mCenter + mRadius / 2 / 2 * Math.cos(angle.toDouble())).toInt()
+        val y = (mCenter + mRadius / 2 / 2 * Math.sin(angle.toDouble())).toInt()
 
         val xStart = mRadius / 2f / 3f
 

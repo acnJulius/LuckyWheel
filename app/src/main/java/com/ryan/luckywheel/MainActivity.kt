@@ -59,7 +59,7 @@ class MainActivity : Activity(), LuckyWheelView.PostSpinListener {
 
         //////////////////
         val luckyItem4 = LuckyItem()
-        luckyItem4.topText = "GIFT CARD"
+        luckyItem4.topText = "Gift card"
         luckyItem4.secondaryText = "$5"
         //luckyItem4.icon = R.drawable.test4
         luckyItem4.color = ContextCompat.getColor(this,rubikstudio.library.R.color.colorTextDark)
@@ -89,7 +89,7 @@ class MainActivity : Activity(), LuckyWheelView.PostSpinListener {
         data.add(luckyItem7)
 
         val luckyItem8 = LuckyItem()
-        luckyItem8.topText = "GIFT CARD"
+        luckyItem8.topText = "Gift card"
         luckyItem8.secondaryText = "$5"
         //luckyItem8.icon = R.drawable.test8
         luckyItem8.color = ContextCompat.getColor(this,rubikstudio.library.R.color.colorTextDark)
@@ -112,42 +112,42 @@ class MainActivity : Activity(), LuckyWheelView.PostSpinListener {
         data.add(luckyItem10)
 
         val luckyItem11 = LuckyItem()
-        luckyItem11.topText = "GIFT CARD"
+        luckyItem11.topText = "Gift card"
         luckyItem11.secondaryText = "2000"
         //luckyItem11.icon = R.drawable.test10
         luckyItem11.color = ContextCompat.getColor(this,rubikstudio.library.R.color.slice_shine_white)
         data.add(luckyItem11)
 
         val luckyItem12 = LuckyItem()
-        luckyItem12.topText = "GIFT CARD"
+        luckyItem12.topText = "Gift card"
         luckyItem12.secondaryText = "3000"
         //luckyItem12.icon = R.drawable.test10
         luckyItem12.color = ContextCompat.getColor(this,rubikstudio.library.R.color.slice_shine_white)
         data.add(luckyItem12)
 
         val luckyItem13 = LuckyItem()
-        luckyItem13.topText = "GIFT CARD"
+        luckyItem13.topText = "Gift card"
         luckyItem13.secondaryText = "$5"
         //luckyItem12.icon = R.drawable.test10
         luckyItem13.color = ContextCompat.getColor(this,rubikstudio.library.R.color.slice_shine_white)
         data.add(luckyItem13)
 
         val luckyItem14 = LuckyItem()
-        luckyItem14.topText = "GIFT CARD"
+        luckyItem14.topText = "Gift card"
         luckyItem14.secondaryText = "3000"
         //luckyItem12.icon = R.drawable.test10
         luckyItem14.color = ContextCompat.getColor(this,rubikstudio.library.R.color.slice_shine_white)
         data.add(luckyItem14)
 
         val luckyItem15 = LuckyItem()
-        luckyItem15.topText = "GIFT CARD"
+        luckyItem15.topText = "Gift card"
         luckyItem15.secondaryText = "$5"
         //luckyItem12.icon = R.drawable.test10
         luckyItem15.color = ContextCompat.getColor(this,rubikstudio.library.R.color.slice_shine_white)
         data.add(luckyItem15)
 
         val luckyItem16 = LuckyItem()
-        luckyItem16.topText = "GIFT CARD"
+        luckyItem16.topText = "Gift card"
         luckyItem16.secondaryText = "3000"
         //luckyItem12.icon = R.drawable.test10
         luckyItem16.color = ContextCompat.getColor(this,rubikstudio.library.R.color.slice_shine_white)
